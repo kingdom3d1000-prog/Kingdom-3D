@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kingdom 3D</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#050505;
+font-family:'Inter',sans-serif;
+color:white;
+overflow-x:hidden;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+.bg{
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 35%),
+linear-gradient(to bottom,#0b0b0b,#000);
+z-index:-2;
+}
+
+.grid{
+position:fixed;
+inset:0;
+background-image:
+linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+background-size:40px 40px;
+z-index:-1;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+backdrop-filter:blur(10px);
+background:rgba(0,0,0,0.45);
+border-bottom:1px solid rgba(255,255,255,0.08);
+z-index:1000;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.logo img{
+width:55px;
+height:55px;
+border-radius:12px;
+}
+
+.logo h1{
+font-family:'Orbitron',sans-serif;
+letter-spacing:4px;
+font-size:1.1rem;
+}
+
+nav ul{
+display:flex;
+gap:28px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:#c1c1c1;
+transition:0.3s;
+}
+
+nav a:hover{
+color:white;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:140px 8% 80px;
+text-align:center;
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.hero-logo{
+width:220px;
+margin-bottom:30px;
+filter:drop-shadow(0 0 30px rgba(255,255,255,0.15));
+}
+
+.hero h2{
+font-family:'Orbitron',sans-serif;
+font-size:4rem;
+letter-spacing:5px;
+margin-bottom:20px;
+background:linear-gradient(to right,#fff,#7e7e7e);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+max-width:720px;
+margin:auto;
+line-height:1.8;
+color:#c5c5c5;
+font-size:1.1rem;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:18px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 28px;
+border-radius:14px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.btn-primary{
+background:white;
+color:black;
+}
+
+.btn-secondary{
+border:1px solid rgba(255,255,255,0.15);
+color:white;
+}
+
+section{
+padding:90px 8%;
+}
+
+.section-title{
+text-align:center;
+font-family:'Orbitron',sans-serif;
+font-size:2.1rem;
+letter-spacing:4px;
+margin-bottom:50px;
+}
+
+.store-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:22px;
+}
+
+.store-card{
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.08);
+padding:35px;
+border-radius:24px;
+text-align:center;
+transition:0.3s;
+}
+
+.store-card:hover{
+transform:translateY(-8px);
+border-color:rgba(255,255,255,0.18);
+}
+
+.store-icon{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.store-card h3{
+margin-bottom:15px;
+font-size:1.4rem;
+}
+
+.store-card p{
+color:#b8b8b8;
+line-height:1.7;
+margin-bottom:20px;
+}
+
+.store-card a{
+display:inline-block;
+padding:12px 20px;
+border-radius:12px;
+background:white;
+color:black;
+text-decoration:none;
+font-weight:600;
+}
+
+.contact{
+text-align:center;
+}
+
+footer{
+padding:35px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.08);
+color:#808080;
+margin-top:80px;
+}
+
+@media(max-width:768px){
+
+nav ul{
+display:none;
+}
+
+.hero h2{
+font-size:2.6rem;
+}
+
+.hero-logo{
+width:170px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="grid"></div>
+
+<header>
+<nav>
+
+<div class="logo">
+<img src="Logo.jpeg" alt="Kingdom 3D">
+<h1>KINGDOM 3D</h1>
+</div>
+
+<ul>
+<li><a href="#lojas">Lojas</a></li>
+<li><a href="#contato">Contato</a></li>
+</ul>
+
+</nav>
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<img class="hero-logo" src="Logo.jpeg" alt="Kingdom 3D">
+
+<h2>IMPRESSÃO 3D PREMIUM</h2>
+
+<p>
+Peças impressas em 3D com acabamento profissional para decoração,
+utilidades domésticas, ferramentas, acessórios automotivos e soluções personalizadas.
+</p>
+
+<div class="buttons">
+<a class="btn btn-primary" href="#lojas">
+Nossas lojas
+</a>
+
+<a class="btn btn-secondary" href="https://wa.me/5599999999999">
+<i class="fa-brands fa-whatsapp"></i>
+Contato
+</a>
+</div>
+
+</div>
+
+</section>
+
+<section id="lojas">
+
+<h2 class="section-title">NOSSAS LOJAS</h2>
+
+<div class="store-grid">
+
+<div class="store-card">
+<div class="store-icon"><i class="fa-brands fa-instagram"></i></div>
+<h3>Instagram</h3>
+<p>Veja vídeos, lançamentos e bastidores da Kingdom 3D.</p>
+<a href="https://instagram.com" target="_blank">Abrir</a>
+</div>
+
+<div class="store-card">
+<div class="store-icon"><i class="fa-brands fa-facebook"></i></div>
+<h3>Facebook</h3>
+<p>Acompanhe promoções e novidades da loja.</p>
+<a href="https://facebook.com" target="_blank">Abrir</a>
+</div>
+
+<div class="store-card">
+<div class="store-icon"><i class="fa-solid fa-store"></i></div>
+<h3>Mercado Livre</h3>
+<p>Compre nossos produtos com segurança.</p>
+<a href="https://mercadolivre.com.br" target="_blank">Abrir</a>
+</div>
+
+<div class="store-card">
+<div class="store-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+<h3>Shopee</h3>
+<p>Produtos exclusivos com envio para todo Brasil.</p>
+<a href="https://shopee.com.br" target="_blank">Abrir</a>
+</div>
+
+<div class="store-card">
+<div class="store-icon"><i class="fa-brands fa-amazon"></i></div>
+<h3>Amazon</h3>
+<p>Confira nossa linha premium na Amazon.</p>
+<a href="https://amazon.com.br" target="_blank">Abrir</a>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Kingdom 3D — Todos os direitos reservados.
+</footer>
+
+</body>
+</html>
